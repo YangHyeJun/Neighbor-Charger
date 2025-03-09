@@ -1,0 +1,37 @@
+name: neighbor_chargers
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2
+  flutter_native_splash: ^2.4.5
+
+dev_dependencies:
+  flutter_gen_runner: ^5.10.0   # flutter pub run build_runner build 명령어로 gen 실행
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+flutter_gen:
+  output: lib/gen/      # <-- 생성된 코드가 들어갈 폴더 지정
+  line_length: 80       # <-- 코드 스타일 설정 (선택 사항)
+  integrations:
+    flutter_svg: true   # <-- flutter_svg 지원 (선택 사항)
