@@ -15,8 +15,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
+  /// File path: assets/images/splash_mini_car.png
+  AssetGenImage get splashMiniCar =>
+      const AssetGenImage('assets/images/splash_mini_car.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [splash];
+  List<AssetGenImage> get values => [splash, splashMiniCar];
 }
 
 class Assets {

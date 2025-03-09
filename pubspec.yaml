@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
   flutter_native_splash: ^2.4.5
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_gen_runner: ^5.10.0   # flutter pub run build_runner build 명령어로 gen 실행
