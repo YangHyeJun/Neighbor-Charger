@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/icon
+  $AssetsImagesIconGen get icon => const $AssetsImagesIconGen();
+
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
@@ -21,6 +24,25 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [splash, splashMiniCar];
+}
+
+class $AssetsImagesIconGen {
+  const $AssetsImagesIconGen();
+
+  /// File path: assets/images/icon/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/images/icon/facebook.png');
+
+  /// File path: assets/images/icon/kakao.png
+  AssetGenImage get kakao =>
+      const AssetGenImage('assets/images/icon/kakao.png');
+
+  /// File path: assets/images/icon/naver.png
+  AssetGenImage get naver =>
+      const AssetGenImage('assets/images/icon/naver.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [facebook, kakao, naver];
 }
 
 class Assets {

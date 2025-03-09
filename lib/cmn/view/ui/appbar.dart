@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class NCAppBar extends StatelessWidget implements PreferredSizeWidget {
   const NCAppBar({
     super.key,
-    this.leading,
+    this.leading = false,
     required this.title,
     this.trailing,
   });
 
-  final Widget? leading;
+  final bool? leading;
   final String title;
   final Widget? trailing;
 
@@ -22,15 +22,17 @@ class NCAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: Row(
         children: [
-          SizedBox(
-            width: 24,
-            height: 24,
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () {},
+          if (leading == true) ...[
+            SizedBox(
+              width: 24,
+              height: 24,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: () {},
+              ),
             ),
-          ),
-          const SizedBox(width: 13),
+          ],
+          const SizedBox(width: 30),
           Expanded(
             child: Text(
               title,

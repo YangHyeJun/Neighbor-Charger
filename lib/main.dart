@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
+import 'package:neighbor_chargers/ui/login/page.dart';
 import 'package:neighbor_chargers/ui/splash/page.dart';
 
 import 'cmn/locator.dart';
@@ -14,7 +15,7 @@ void main() {
 
   FlutterNativeSplash.remove(); // 여기에 바로 호출
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: locator<NavigatorManager>().navigatorKey,
-      home: const SplashPage(),
+      home: SplashPage(),
     );
   }
 }

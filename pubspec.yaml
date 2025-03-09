@@ -30,6 +30,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/icon/
 
 flutter_gen:
   output: lib/gen/      # <-- 생성된 코드가 들어갈 폴더 지정
