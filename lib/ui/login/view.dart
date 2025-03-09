@@ -73,19 +73,21 @@ class LoginView extends NCView<LoginViewModel> {
             child: TextButton(
               onPressed: () {},
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 128, vertical: 9),
+                width: 294,
+                height: 40,
                 decoration: BoxDecoration(
                   color: Color(0xFF9AE6B9),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text(
-                  "로그인",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                child: Center(
+                  child: Text(
+                    "로그인",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
               ),
             ),
           ),
-
 
           // 회원가입 버튼
           Padding(
@@ -93,14 +95,17 @@ class LoginView extends NCView<LoginViewModel> {
             child: TextButton(
               onPressed: () {},
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 123, vertical: 9),
+                width: 294,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.black, width: 1),
                 ),
-                child: Text(
-                  "회원가입",
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                child: Center(
+                  child: Text(
+                    "회원가입",
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ),
                 ),
               ),
             ),
@@ -108,11 +113,12 @@ class LoginView extends NCView<LoginViewModel> {
 
           // 네이버 로그인
           Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 150),
             child: TextButton(
               onPressed: () {},
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 115, vertical: 9),
+                width: 294,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.black, width: 1),
@@ -120,13 +126,16 @@ class LoginView extends NCView<LoginViewModel> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Expanded(child: Assets.images.icon.naver.image(width: 10, height: 10),),
-                    Text(
-                      "네이버",
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    Assets.images.icon.naver.image(width: 24, height: 24),
+                    SizedBox(width: 3),
+                    Center(
+                      child: Text(
+                        "네이버",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
                     ),
                   ],
-                )
+                ),
               ),
             ),
           ),
@@ -137,14 +146,24 @@ class LoginView extends NCView<LoginViewModel> {
             child: TextButton(
               onPressed: () {},
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 123, vertical: 9),
+                width: 294,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.black, width: 1),
                 ),
-                child: Text(
-                  "회원가입",
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Assets.images.icon.kakao.image(width: 24, height: 24),
+                    SizedBox(width: 3),
+                    Center(
+                      child: Text(
+                        "카카오",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -156,14 +175,24 @@ class LoginView extends NCView<LoginViewModel> {
             child: TextButton(
               onPressed: () {},
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 123, vertical: 9),
+                width: 294,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.black, width: 1),
                 ),
-                child: Text(
-                  "회원가입",
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Assets.images.icon.facebook.image(width: 24, height: 24),
+                    SizedBox(width: 3),
+                    Center(
+                      child: Text(
+                        "페이스북",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
