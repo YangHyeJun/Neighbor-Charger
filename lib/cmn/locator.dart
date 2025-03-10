@@ -5,5 +5,9 @@ import 'manager/navigator.dart';
 final GetIt locator = GetIt.instance;
 
 void setupLocator() {
-  locator.registerLazySingleton(() => NavigatorManager());
+  try {
+    locator.registerLazySingleton(() => NavigatorManager());
+  } catch (e, stacktrace) {
+    debugPrint("❌ setupLocator 오류 발생: $e\n$stacktrace");
+  }
 }

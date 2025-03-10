@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
 
 import '../../ui/login/page.dart';
+import '../../ui/sign_in/page.dart';
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class NavigatorManager {
-  // Navigator를 사용할 컨텍스트를 받도록 설정
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  final NavigatorState? currentNavigatorState;
 
-  void pop() {
-    navigatorKey.currentState?.pop();
+  NavigatorManager([this.currentNavigatorState]);
+
+  void pop<T extends Object>([T? result]) {
+    if (currentNavigatorState?.canPop() ?? false) {
+      currentNavigatorState?.pop(result);
+    }
   }
 
-  // region: 로그인, 회원가입
+  // 로그인
   Future<dynamic> goLoginPage() {
     return navigatorKey.currentState?.push(
-          MaterialPageRoute(builder: (context) => LoginPage()),
-        ) ??
+      MaterialPageRoute(builder: (context) => LoginPage()),
+    ) ??
         Future.value();
   }
-
-  // endregion
+  // 회원가입
+  Future<dynamic> goSignInPage() {
+    return navigatorKey.currentState?.push(
+      MaterialPageRoute(builder: (context) => SignInPage()),
+    ) ??
+        Future.value();
+  }
 }

@@ -1,21 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:neighbor_chargers/cmn/view/ui/body.dart';
-import 'package:neighbor_chargers/cmn/view/ui/page.dart' show NCPage;
 import 'package:neighbor_chargers/gen/assets.gen.dart';
 import 'package:neighbor_chargers/ui/splash/splash_viewmodel.dart';
-
 import '../../cmn/view/nc_view.dart';
 
 class SplashView extends NCView<SplashViewModel> {
-  const SplashView({super.key});
-
   @override
-  Widget buildBody(BuildContext context, SplashViewModel viewModel) {
-    return NCPage(body: NCBody(child: body(viewModel)));
+  Widget draw() {
+    return Scaffold(
+      body: body(),
+    );
   }
 
-  Widget body(SplashViewModel viewModel) {
+  Widget body() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

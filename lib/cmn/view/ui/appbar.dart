@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neighbor_chargers/cmn/manager/navigator.dart';
 
 class NCAppBar extends StatelessWidget implements PreferredSizeWidget {
   const NCAppBar({
@@ -14,38 +15,35 @@ class NCAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      height: kToolbarHeight,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-      ),
-      child: Row(
-        children: [
-          if (leading == true) ...[
-            SizedBox(
-              width: 24,
-              height: 24,
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
-                onPressed: () {},
-              ),
-            ),
-          ],
-          const SizedBox(width: 30),
-          Expanded(
+    return Column(
+      children: [
+        AppBar(
+          leading: leading == true
+              ? IconButton(
+            onPressed: () {
+              navigatorKey.currentState?.pop();
+            },
+            icon: const Icon(Icons.arrow_back_ios),
+          )
+              : SizedBox.shrink(),
+          title: Transform(
+            transform: Matrix4.translationValues(-20.0, 0.0, 0.0),
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          if (trailing != null) trailing!,
-        ],
-      ),
+          actions: [
+            if (trailing != null) trailing!,
+          ],
+        ),
+        // Expanded(
+        //   child: Divider(
+        //     height: 1,
+        //     thickness: 1,
+        //   ),
+        // ),
+      ],
     );
   }
 

@@ -3,19 +3,15 @@ import 'package:neighbor_chargers/ui/splash/splash_view.dart';
 import 'package:neighbor_chargers/ui/splash/splash_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+import '../../cmn/view/nc_page.dart';
 
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
+class SplashPage extends NCPage {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SplashViewModel(),
-      builder: (context, child) => SplashView(),
+    super.build(context);
+    return ChangeNotifierProvider<SplashViewModel>(
+      create: (_) => SplashViewModel(navigatorManager: navigatorManager),
+      child: SplashView(),
     );
   }
 }
