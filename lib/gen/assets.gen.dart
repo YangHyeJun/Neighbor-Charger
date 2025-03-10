@@ -37,12 +37,26 @@ class $AssetsImagesIconGen {
   AssetGenImage get kakao =>
       const AssetGenImage('assets/images/icon/kakao.png');
 
+  /// File path: assets/images/icon/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/images/icon/location.png');
+
   /// File path: assets/images/icon/naver.png
   AssetGenImage get naver =>
       const AssetGenImage('assets/images/icon/naver.png');
 
+  /// File path: assets/images/icon/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/images/icon/notification.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [facebook, kakao, naver];
+  List<AssetGenImage> get values => [
+    facebook,
+    kakao,
+    location,
+    naver,
+    notification,
+  ];
 }
 
 class Assets {

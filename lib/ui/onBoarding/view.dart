@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:neighbor_chargers/cmn/ui/button.dart';
+import 'package:neighbor_chargers/cmn/ui/modal_bottom_sheet.dart';
 import 'package:neighbor_chargers/ui/onBoarding/viewmodel.dart';
 
 import '../../cmn/view/nc_view.dart';
@@ -96,12 +97,94 @@ class OnBoardingView extends NCView<OnBoardingViewModel> {
               ],
             ),
             SizedBox(height: 17),
-            CMButton(text: "다음", onPressed: () {
-              viewModel.goLoginPage();
-            }).successButton(),
+            CMButton(
+              text: "다음",
+              onPressed: () {
+                CMModalBottomSheet.show(context, _buildModalContent());
+              },
+            ).successButton(),
           ],
         ),
       ),
+    );
+  }
+  Widget _buildModalContent() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _buildHeaderText(),
+        SizedBox(height: 32),
+        _buildPermissionList(),
+        Padding(
+          padding: const EdgeInsets.only(top:50, bottom: 24),
+          child: Center(
+            child: CMButton(
+              text: '완료',
+              onPressed: () {},
+            ).successButton(),
+          ),
+        ),
+      ],
+    );
+  }
+
+
+  Widget _buildHeaderText() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 32, top: 24),
+      child: Text(
+        '앱 사용을 위해\n아래 권한을 허용해 주세요',
+        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+
+  Widget _buildPermissionList() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 32,),
+      child: Column(
+        children: [
+          _buildPermissionRow(
+            icon: Assets.images.icon.notification.image(width: 41, height: 41),
+            title: '알림',
+            description: '충전 상태에 대한 알림을 받을 수 있습니다.',
+          ),
+          SizedBox(height: 28),
+          _buildPermissionRow(
+            icon: Assets.images.icon.location.image(width: 41, height: 41),
+            title: '위치',
+            description: '지도에서 실시간 위치를 확인하고\n주변 충전소를 확인할 수 있습니다.',
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPermissionRow({
+    required Image icon,
+    required String title,
+    required String description,
+  }) {
+    return Row(
+      children: [
+        icon,
+        SizedBox(width: 24),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+            SizedBox(height: 4),
+            Text(
+              description,
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
