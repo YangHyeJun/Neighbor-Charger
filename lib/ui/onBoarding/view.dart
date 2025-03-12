@@ -121,7 +121,10 @@ class OnBoardingView extends NCView<OnBoardingViewModel> {
           child: Center(
             child: CMButton(
               text: '완료',
-              onPressed: () {},
+              onPressed: () {
+                /// TODO : 권한 확인 로직 추가
+                viewModel.goSignInPage();
+              },
             ).successButton(),
           ),
         ),

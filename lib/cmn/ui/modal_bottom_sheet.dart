@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:neighbor_chargers/cmn/manager/navigator.dart';
 
 class CMModalBottomSheet extends StatelessWidget {
   final Widget child;
@@ -9,33 +8,31 @@ class CMModalBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GestureDetector(
-          onTap: () {
-            navigatorKey.currentState?.pop();
-          },
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(borderRadius),
+            topRight: Radius.circular(borderRadius),
+          ),
           child: Container(
-            color: Colors.black.withOpacity(0.5),
             width: double.infinity,
-            height: double.infinity,
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(borderRadius),
-              topRight: Radius.circular(borderRadius),
-            ),
-            child: Container(
-              width: double.infinity,
-              color: Colors.white,
-              child: child,
+            color: Colors.transparent,
+            child: GestureDetector(
+              onTap: () {
+              },
+              child: Container(
+                color: Colors.white,
+                child: child,
+              ),
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 
@@ -44,6 +41,8 @@ class CMModalBottomSheet extends StatelessWidget {
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
+      isDismissible: true,
+      enableDrag: true,
       builder: (BuildContext context) {
         return CMModalBottomSheet(child: child);
       },

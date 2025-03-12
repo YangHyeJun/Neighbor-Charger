@@ -29,6 +29,10 @@ class $AssetsImagesGen {
 class $AssetsImagesIconGen {
   const $AssetsImagesIconGen();
 
+  /// File path: assets/images/icon/clear_input.png
+  AssetGenImage get clearInput =>
+      const AssetGenImage('assets/images/icon/clear_input.png');
+
   /// File path: assets/images/icon/facebook.png
   AssetGenImage get facebook =>
       const AssetGenImage('assets/images/icon/facebook.png');
@@ -51,6 +55,7 @@ class $AssetsImagesIconGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    clearInput,
     facebook,
     kakao,
     location,

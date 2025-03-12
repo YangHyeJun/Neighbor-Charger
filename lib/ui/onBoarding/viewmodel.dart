@@ -10,4 +10,10 @@ class OnBoardingViewModel extends NCViewModel {
   Future<void> goLoginPage() async{
     navigatorManager.goLoginPage();
   }
+
+  Future<void> goSignInPage() async{
+    navigatorManager.goSignInPage();
+  }
+
+  /// TODO : 권한 확인 로직 추가
 }

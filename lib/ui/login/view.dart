@@ -76,41 +76,41 @@ class LoginView extends NCView<LoginViewModel> {
                 viewModel.goSignInPage();
               }).commonButton(),
             ),
-            // 네이버 로그인 버튼
-            Padding(
-              padding: const EdgeInsets.only(top: 150),
-              child:
-                  CMButton(
-                    text: '네이버',
-                    image: Assets.images.icon.naver.image(
-                      width: 24,
-                      height: 24,
-                    ),
-                    onPressed: () {},
-                  ).commonButton(),
-            ),
-            // 카카오 로그인 버튼
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child:
-                  CMButton(
-                    text: '카카오',
-                    image: Assets.images.icon.kakao.image(
-                      width: 24,
-                      height: 24,
-                    ),
-                    onPressed: () {},
-                  ).commonButton(),
-            ),
-            // 페이스북 로그인 버튼
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: CMButton(
-                text: '페이스북',
-                image: Assets.images.icon.facebook.image(width: 24, height: 24),
-                onPressed: (){},
-              ).commonButton(),
-            ),
+            // // 네이버 로그인 버튼
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 150),
+            //   child:
+            //       CMButton(
+            //         text: '네이버',
+            //         image: Assets.images.icon.naver.image(
+            //           width: 24,
+            //           height: 24,
+            //         ),
+            //         onPressed: () {},
+            //       ).commonButton(),
+            // ),
+            // // 카카오 로그인 버튼
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 10),
+            //   child:
+            //       CMButton(
+            //         text: '카카오',
+            //         image: Assets.images.icon.kakao.image(
+            //           width: 24,
+            //           height: 24,
+            //         ),
+            //         onPressed: () {},
+            //       ).commonButton(),
+            // ),
+            // // 페이스북 로그인 버튼
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 10),
+            //   child: CMButton(
+            //     text: '페이스북',
+            //     image: Assets.images.icon.facebook.image(width: 24, height: 24),
+            //     onPressed: (){},
+            //   ).commonButton(),
+            // ),
           ],
         ),
       ),
