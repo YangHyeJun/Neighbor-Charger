@@ -1,18 +1,12 @@
-# neighbor_chargers
+## 이웃집 충전기 (Refactoring...)
 
-A new Flutter project.
+# 기존 프로젝트
+[이웃집 충전기](https://github.com/CapstoneTeam2/NeighborCharger)
 
-## Getting Started
+# 모바일 개발 진행 상황 및 피그마 UI
+[Figma] (https://www.figma.com/design/sfzBDyJgucqb47QH8LUGrP/%EC%9D%B4%EC%9B%83%EC%A7%91-%EC%B6%A9%EC%A0%84%EA%B8%B0?node-id=0-1&t=fEIvRoWHQOtU3Evg-1)
 
-This project is a starting point for a Flutter application.
+# 🧑‍🤝‍🧑 팀원
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-# Neighbor-Charger
+- Frontend Developer : [양혜준](https://github.com/YangHyeJun)
+- Backend Developer : [조범희](https://github.com/ChoBeomHee),
