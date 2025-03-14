@@ -11,3 +11,7 @@ Figma UI와 프로젝트 진행 상황이 같습니다.
 
 - Frontend Developer : [양혜준](https://github.com/YangHyeJun)
 - Backend Developer : [조범희](https://github.com/ChoBeomHee)
+
+### 사용 언어
+- mobile : Flutter, Kotlin(사용 예정, 현재 구현 X), Swift(사용 예정, 현재 구현 X) <br/>
+- backend : Java, SpringBoot
