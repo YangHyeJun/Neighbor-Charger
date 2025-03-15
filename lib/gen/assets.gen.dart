@@ -29,6 +29,9 @@ class $AssetsImagesGen {
 class $AssetsImagesIconGen {
   const $AssetsImagesIconGen();
 
+  /// Directory path: assets/images/icon/bank
+  $AssetsImagesIconBankGen get bank => const $AssetsImagesIconBankGen();
+
   /// File path: assets/images/icon/clear_input.png
   AssetGenImage get clearInput =>
       const AssetGenImage('assets/images/icon/clear_input.png');
@@ -53,6 +56,10 @@ class $AssetsImagesIconGen {
   AssetGenImage get notification =>
       const AssetGenImage('assets/images/icon/notification.png');
 
+  /// File path: assets/images/icon/x_button.png
+  AssetGenImage get xButton =>
+      const AssetGenImage('assets/images/icon/x_button.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     clearInput,
@@ -61,6 +68,55 @@ class $AssetsImagesIconGen {
     location,
     naver,
     notification,
+    xButton,
+  ];
+}
+
+class $AssetsImagesIconBankGen {
+  const $AssetsImagesIconBankGen();
+
+  /// File path: assets/images/icon/bank/hana_bank.png
+  AssetGenImage get hanaBank =>
+      const AssetGenImage('assets/images/icon/bank/hana_bank.png');
+
+  /// File path: assets/images/icon/bank/ibk_bank.png
+  AssetGenImage get ibkBank =>
+      const AssetGenImage('assets/images/icon/bank/ibk_bank.png');
+
+  /// File path: assets/images/icon/bank/kakao_bank.png
+  AssetGenImage get kakaoBank =>
+      const AssetGenImage('assets/images/icon/bank/kakao_bank.png');
+
+  /// File path: assets/images/icon/bank/kookmin_bank.png
+  AssetGenImage get kookminBank =>
+      const AssetGenImage('assets/images/icon/bank/kookmin_bank.png');
+
+  /// File path: assets/images/icon/bank/nonghyup_bank.png
+  AssetGenImage get nonghyupBank =>
+      const AssetGenImage('assets/images/icon/bank/nonghyup_bank.png');
+
+  /// File path: assets/images/icon/bank/shinhan_bank.png
+  AssetGenImage get shinhanBank =>
+      const AssetGenImage('assets/images/icon/bank/shinhan_bank.png');
+
+  /// File path: assets/images/icon/bank/toss_bank.png
+  AssetGenImage get tossBank =>
+      const AssetGenImage('assets/images/icon/bank/toss_bank.png');
+
+  /// File path: assets/images/icon/bank/woori_bank.png
+  AssetGenImage get wooriBank =>
+      const AssetGenImage('assets/images/icon/bank/woori_bank.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    hanaBank,
+    ibkBank,
+    kakaoBank,
+    kookminBank,
+    nonghyupBank,
+    shinhanBank,
+    tossBank,
+    wooriBank,
   ];
 }
 

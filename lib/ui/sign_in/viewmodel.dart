@@ -14,7 +14,17 @@ class SignInViewModel extends NCViewModel {
   String? get accountNumber => _accountNumber;
   String? _accountNumber;
 
+  String? get bankName => _bankName;
+  String? _bankName;
+
   ViewMode viewMode = ViewMode.name;
+
+  bool get isAllInput =>
+      _name?.isNotEmpty == true &&
+          _residentFrontNumber?.isNotEmpty == true &&
+          _residentBackNumber?.isNotEmpty == true &&
+          _accountNumber?.isNotEmpty == true &&
+          _bankName?.isNotEmpty == true;
 
   SignInViewModel({required NavigatorManager navigatorManager});
 
@@ -48,10 +58,20 @@ class SignInViewModel extends NCViewModel {
     notifyListeners();
   }
 
+  // 계좌번호 입력받기
   void inputAccountNumber(String accountNumber) {
     _accountNumber = accountNumber;
     if (_accountNumber != null && _accountNumber!.length > 8 && _accountNumber != '') {
       setViewMode(ViewMode.carrierSelection);
+    }
+    print("CHECK : ${isAllInput}");
+    notifyListeners();
+  }
+
+  // 선택된 은행 입력받기
+  void inputBank(String bankName) {
+    if (bankName != '' && bankName.isNotEmpty) {
+      _bankName = bankName;
     }
     notifyListeners();
   }
@@ -60,6 +80,10 @@ class SignInViewModel extends NCViewModel {
   void setViewMode(ViewMode nextViewMode) {
     viewMode = nextViewMode;
     notifyListeners();
+  }
+
+  void goPhoneCertification() {
+
   }
 
   String get title {
