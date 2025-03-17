@@ -24,7 +24,7 @@ class SignInView extends NCView<SignInViewModel> {
       children: <Widget>[
         Expanded(child: body()),
         // 이름 입력이 활성화된 경우에만 Footer를 표시
-        if (viewModel.viewMode == ViewMode.name || viewModel.isAllInput) drawFooter(),
+        if (viewModel.viewMode == SignInViewMode.name || viewModel.isAllInput) drawFooter(),
       ],
     );
   }
@@ -48,7 +48,7 @@ class SignInView extends NCView<SignInViewModel> {
           children: [
             // title은 viewModel에서 관리
             Text(viewModel.title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            if (viewModel.viewMode == ViewMode.accountNumber) ...[
+            if (viewModel.viewMode == SignInViewMode.accountNumber) ...[
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +86,7 @@ class SignInView extends NCView<SignInViewModel> {
                     child: Column(
                       children: [
                         ListTile(
-                          contentPadding: EdgeInsets.zero, // 기본 패딩 제거
+                          contentPadding: EdgeInsets.zero,
                           title:
                               (viewModel.bankName == null || viewModel.bankName == '')
                                   ? Text(
@@ -111,8 +111,8 @@ class SignInView extends NCView<SignInViewModel> {
               ),
             ],
             // 주민등록번호를 입력하는 필드는 name이 입력된 후에 보여짐
-            if (viewModel.viewMode == ViewMode.residentNumber ||
-                viewModel.viewMode == ViewMode.accountNumber) ...[
+            if (viewModel.viewMode == SignInViewMode.residentNumber ||
+                viewModel.viewMode == SignInViewMode.accountNumber) ...[
               Padding(
                 padding: const EdgeInsets.only(top: 44),
                 child: Text("주민등록번호", style: TextStyle(fontSize: 18, color: Color(0xFF9D9D9D))),
@@ -230,10 +230,10 @@ class SignInView extends NCView<SignInViewModel> {
         child: CMButton(
               text: "확인",
               onPressed: () {
-                if (viewModel.viewMode == ViewMode.name) {
+                if (viewModel.viewMode == SignInViewMode.name) {
                   viewModel.inputName(name_controller.text);
                 } else if (viewModel.isAllInput) {
-                  viewModel.goPhoneCertification();
+                  viewModel.goPhoneAuthentication();
                 }
                 FocusScope.of(context).requestFocus(FocusNode());
               },
@@ -262,7 +262,9 @@ class SignInView extends NCView<SignInViewModel> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    /// TODO : modal sheet 내리기
+                  },
                   child: Assets.images.icon.xButton.image(width: 14, height: 14),
                 ),
               ],
@@ -297,7 +299,6 @@ class SignInView extends NCView<SignInViewModel> {
       child: InkWell(
         onTap: () {
           viewModel.inputBank(bankName);
-          print("Bank : $bankName");
         },
         child: Container(
           width: 76,

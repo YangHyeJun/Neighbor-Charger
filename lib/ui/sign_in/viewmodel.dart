@@ -17,21 +17,21 @@ class SignInViewModel extends NCViewModel {
   String? get bankName => _bankName;
   String? _bankName;
 
-  ViewMode viewMode = ViewMode.name;
+  SignInViewMode viewMode = SignInViewMode.name;
 
   bool get isAllInput =>
       _name?.isNotEmpty == true &&
-          _residentFrontNumber?.isNotEmpty == true &&
-          _residentBackNumber?.isNotEmpty == true &&
-          _accountNumber?.isNotEmpty == true &&
-          _bankName?.isNotEmpty == true;
+      _residentFrontNumber?.isNotEmpty == true &&
+      _residentBackNumber?.isNotEmpty == true &&
+      _accountNumber?.isNotEmpty == true &&
+      _bankName?.isNotEmpty == true;
 
   SignInViewModel({required NavigatorManager navigatorManager});
 
   void inputName(String name) {
     _name = name;
     if (_name != null && _name!.isNotEmpty) {
-      setViewMode(ViewMode.residentNumber);
+      setViewMode(SignInViewMode.residentNumber);
     }
     notifyListeners();
   }
@@ -42,7 +42,7 @@ class SignInViewModel extends NCViewModel {
         _residentFrontNumber!.length == 6 &&
         _residentBackNumber != null &&
         _residentBackNumber!.isNotEmpty) {
-      setViewMode(ViewMode.accountNumber);
+      setViewMode(SignInViewMode.accountNumber);
     }
     notifyListeners();
   }
@@ -53,7 +53,7 @@ class SignInViewModel extends NCViewModel {
         _residentFrontNumber!.length == 6 &&
         _residentBackNumber != null &&
         _residentBackNumber!.isNotEmpty) {
-      setViewMode(ViewMode.accountNumber);
+      setViewMode(SignInViewMode.accountNumber);
     }
     notifyListeners();
   }
@@ -61,10 +61,6 @@ class SignInViewModel extends NCViewModel {
   // 계좌번호 입력받기
   void inputAccountNumber(String accountNumber) {
     _accountNumber = accountNumber;
-    if (_accountNumber != null && _accountNumber!.length > 8 && _accountNumber != '') {
-      setViewMode(ViewMode.carrierSelection);
-    }
-    print("CHECK : ${isAllInput}");
     notifyListeners();
   }
 
@@ -77,34 +73,29 @@ class SignInViewModel extends NCViewModel {
   }
 
   // viewMode를 업데이트하는 함수
-  void setViewMode(ViewMode nextViewMode) {
+  void setViewMode(SignInViewMode nextViewMode) {
     viewMode = nextViewMode;
     notifyListeners();
   }
 
-  void goPhoneCertification() {
-
+  void goPhoneAuthentication() {
+    navigatorManager.goPhoneAuthPage();
   }
 
   String get title {
     switch (viewMode) {
-      case ViewMode.name:
+      case SignInViewMode.name:
         return '이름을 입력해 주세요.';
-      case ViewMode.residentNumber:
+      case SignInViewMode.residentNumber:
         return '주민등록번호를 입력해주세요.';
-      case ViewMode.accountNumber:
-        return '판매자에게 보여줄 계좌번호를 입력해주세요.';
-      case ViewMode.carrierSelection:
-        return '통신사를 선택해 주세요.';
-      default:
-        return '이름을 입력해 주세요.';
+      case SignInViewMode.accountNumber:
+        return '판매자에게 보여줄 계좌번호를\n입력해주세요.';
     }
   }
 }
 
-enum ViewMode {
+enum SignInViewMode {
   name, // 이름을 입력하는 단계
   residentNumber, // 주민등록번호를 입력하는 단계
   accountNumber, // 계좌번호를 입력하는 단계
-  carrierSelection, // 통신사를 선택하는 단계
 }
