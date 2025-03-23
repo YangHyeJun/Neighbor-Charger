@@ -30,15 +30,31 @@ class NavigatorManager {
     ) ??
         Future.value();
   }
+
   Future<dynamic> goPhoneAuthPage() {
     return navigatorKey.currentState?.push(
       MaterialPageRoute(builder: (context) => PhoneAuthPage()),
     ) ??
         Future.value();
   }
+
   Future<dynamic> goSMSAuthPage() {
     return navigatorKey.currentState?.push(
       MaterialPageRoute(builder: (context) => SMSAuthPage()),
+    ) ??
+        Future.value();
+  }
+
+  Future<dynamic> goCarInfoPage() {
+    return navigatorKey.currentState?.push(
+      MaterialPageRoute(builder: (context) => CarInfoPage()),
+    ) ??
+        Future.value();
+  }
+
+  Future<dynamic> goAccountPage() {
+    return navigatorKey.currentState?.push(
+      MaterialPageRoute(builder: (context) => AccountPage()),
     ) ??
         Future.value();
   }

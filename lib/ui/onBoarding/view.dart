@@ -99,6 +99,7 @@ class OnBoardingView extends NCView<OnBoardingViewModel> {
             SizedBox(height: 17),
             CMButton(
               text: "다음",
+              isDeactivate: false,
               onPressed: () {
                 CMModalBottomSheet.show(context, _buildModalContent());
               },

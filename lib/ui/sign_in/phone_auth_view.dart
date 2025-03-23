@@ -24,9 +24,27 @@ class PhoneAuthView extends NCView<PhoneAuthViewModel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '본인인증을 위해\n아래 정보를 입력해주세요.',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: '본인인증을 위해',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text: '\n전화번호를',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF23B05C),
+                  ),
+                ),
+                TextSpan(
+                  text: '를 입력해주세요.',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
 
           Padding(
@@ -39,6 +57,8 @@ class PhoneAuthView extends NCView<PhoneAuthViewModel> {
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             controller: phoneNumber_controller,
             decoration: InputDecoration(
+              hintText: '- 제외',
+              hintStyle: TextStyle(fontSize: 16, color: Color(0xFF9D9D9D)),
               counterText: '',
               enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               focusedBorder: UnderlineInputBorder(
@@ -180,6 +200,13 @@ class PhoneAuthView extends NCView<PhoneAuthViewModel> {
                 backgroundColor:
                     viewModel.mobileCarrier == null ? Color(0xFF59FF9C) : Color(0xFF18CB60),
                 text: "확인",
+                isDeactivate:
+                    viewModel.phoneNumber == null ||
+                            viewModel.phoneNumber == '' ||
+                            phoneNumber_controller.text.length < 11 ||
+                            viewModel.mobileCarrier == null
+                        ? true
+                        : false,
                 onPressed: () {
                   viewModel.goSMSAuthenticationPage();
                 },

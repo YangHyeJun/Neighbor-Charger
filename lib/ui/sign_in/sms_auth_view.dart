@@ -17,22 +17,37 @@ class SmsAuthView extends NCView<SmsAuthViewModel> {
   }
 
   Widget body() {
-
     int minutes = viewModel.remainingTime ~/ 60;
     int seconds = viewModel.remainingTime % 60;
     String formattedTime = '$minutes:${seconds.toString().padLeft(2, '0')}';
-
 
     return Padding(
       padding: const EdgeInsets.only(left: 36, top: 50, right: 44),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '문자로 전송된\n인증번호를 입력해주세요.',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: '문자로 전송된',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text: '\n인증번호',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF23B05C),
+                  ),
+                ),
+                TextSpan(
+                  text: '를 입력해주세요',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
-
           SizedBox(height: 52),
           Stack(
             children: [
@@ -42,9 +57,7 @@ class SmsAuthView extends NCView<SmsAuthViewModel> {
                 controller: smsAuth_controller,
                 decoration: InputDecoration(
                   counterText: '',
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
+                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black, width: 2),
                   ),
@@ -65,17 +78,14 @@ class SmsAuthView extends NCView<SmsAuthViewModel> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Color(0xFFE6E6E6)
+              color: Color(0xFFE6E6E6),
             ),
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
             child: GestureDetector(
               onTap: () {
                 // TODO : 인증 문자 다시 보내기
               },
-              child: Text(
-                "인증 문자 다시 보내기",
-                style: TextStyle(fontSize: 14, color: Color(0xFF515151)),
-              ),
+              child: Text("인증 문자 다시 보내기", style: TextStyle(fontSize: 14, color: Color(0xFF515151))),
             ),
           ),
         ],
@@ -92,6 +102,7 @@ class SmsAuthView extends NCView<SmsAuthViewModel> {
               text: "확인",
               onPressed: () {
                 // TODO : 자동차 정보 입력받는 화면으로 이동
+                viewModel.goCarInfoPage();
               },
             ).successButton(),
       ),

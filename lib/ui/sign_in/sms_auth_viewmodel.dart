@@ -22,6 +22,10 @@ class SmsAuthViewModel extends NCViewModel {
     });
   }
 
+  void goCarInfoPage() {
+    navigatorManager.goCarInfoPage();
+  }
+
   @override
   void dispose() {
     _timer?.cancel();
