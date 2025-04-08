@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:neighbor_chargers/ui/main/page.dart';
 import 'package:neighbor_chargers/ui/onBoarding/page.dart';
 import 'package:neighbor_chargers/ui/splash/page.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: navigatorKey,
-      home: OnBoardingPage(),
+      home: MainPage(),
     );
   }
 }

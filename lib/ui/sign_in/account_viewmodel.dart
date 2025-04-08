@@ -38,6 +38,6 @@ class AccountViewModel extends NCViewModel {
       signInManager.setAccountNumber(_accountNumber!);
       signInManager.setBank(_bankName!);
     }
-    // viewModel.goMainPage();
+    navigatorManager.goMainPage();
   }
 }

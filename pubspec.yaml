@@ -32,7 +32,11 @@ flutter:
     - assets/images/
     - assets/images/icon/
     - assets/images/icon/bank/
-
+    - assets/fonts/
+  fonts:
+    - family: cookieRun
+      fonts:
+        - asset: assets/fonts/CookieRun.ttf
 flutter_gen:
   output: lib/gen/      # <-- 생성된 코드가 들어갈 폴더 지정
   line_length: 80       # <-- 코드 스타일 설정 (선택 사항)

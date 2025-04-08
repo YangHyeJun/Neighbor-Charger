@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../ui/login/page.dart';
+import '../../ui/main/page.dart';
 import '../../ui/sign_in/page.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -16,7 +17,7 @@ class NavigatorManager {
     }
   }
 
-  // 로그인
+  // region: 로그인
   Future<dynamic> goLoginPage() {
     return navigatorKey.currentState?.push(
       MaterialPageRoute(builder: (context) => LoginPage()),
@@ -55,6 +56,14 @@ class NavigatorManager {
   Future<dynamic> goAccountPage() {
     return navigatorKey.currentState?.push(
       MaterialPageRoute(builder: (context) => AccountPage()),
+    ) ??
+        Future.value();
+  }
+
+  // region: 메인
+  Future<dynamic> goMainPage() {
+    return navigatorKey.currentState?.push(
+      MaterialPageRoute(builder: (context) => MainPage()),
     ) ??
         Future.value();
   }

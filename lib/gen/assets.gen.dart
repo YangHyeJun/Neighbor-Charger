@@ -9,6 +9,19 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  /// File path: assets/fonts/BMHANNAPro.ttf
+  String get bMHANNAPro => 'assets/fonts/BMHANNAPro.ttf';
+
+  /// File path: assets/fonts/CookieRun.ttf
+  String get cookieRun => 'assets/fonts/CookieRun.ttf';
+
+  /// List of all assets
+  List<String> get values => [bMHANNAPro, cookieRun];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -48,6 +61,9 @@ class $AssetsImagesIconGen {
   AssetGenImage get location =>
       const AssetGenImage('assets/images/icon/location.png');
 
+  /// File path: assets/images/icon/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/icon/logo.png');
+
   /// File path: assets/images/icon/naver.png
   AssetGenImage get naver =>
       const AssetGenImage('assets/images/icon/naver.png');
@@ -66,6 +82,7 @@ class $AssetsImagesIconGen {
     facebook,
     kakao,
     location,
+    logo,
     naver,
     notification,
     xButton,
@@ -123,6 +140,7 @@ class $AssetsImagesIconBankGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

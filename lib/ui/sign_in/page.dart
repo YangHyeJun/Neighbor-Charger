@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:neighbor_chargers/ui/sign_in/carInfo_viewmodel.dart';
+import 'package:neighbor_chargers/ui/sign_in/id_pwd_view.dart';
 import 'package:neighbor_chargers/ui/sign_in/phone_auth_view.dart';
 import 'package:neighbor_chargers/ui/sign_in/phone_auth_viewmodel.dart';
 import 'package:neighbor_chargers/ui/sign_in/sms_auth_view.dart';
@@ -14,6 +15,7 @@ import '../../cmn/view/nc_page.dart';
 import 'account_view.dart';
 import 'account_viewmodel.dart';
 import 'carInfo_view.dart';
+import 'id_pwd_viewmodel.dart';
 
 class SignInPage extends NCPage {
   @override
@@ -82,6 +84,21 @@ class CarInfoPage extends NCPage {
             signInManager: locator<SignInManager>(),
           ),
       child: CarInfoView(),
+    );
+  }
+}
+
+class IdPwdPage extends NCPage {
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return ChangeNotifierProvider(
+      create:
+          (_) => IdPwdViewModel(
+        navigatorManager: navigatorManager,
+        signInManager: locator<SignInManager>(),
+      ),
+      child: IdPwdView(),
     );
   }
 }
