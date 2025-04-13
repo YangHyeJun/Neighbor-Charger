@@ -28,6 +28,18 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/icon
   $AssetsImagesIconGen get icon => const $AssetsImagesIconGen();
 
+  /// File path: assets/images/my_review.png
+  AssetGenImage get myReview =>
+      const AssetGenImage('assets/images/my_review.png');
+
+  /// File path: assets/images/personal_charger.png
+  AssetGenImage get personalCharger =>
+      const AssetGenImage('assets/images/personal_charger.png');
+
+  /// File path: assets/images/public_charger.png
+  AssetGenImage get publicCharger =>
+      const AssetGenImage('assets/images/public_charger.png');
+
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
@@ -36,11 +48,21 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/splash_mini_car.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [splash, splashMiniCar];
+  List<AssetGenImage> get values => [
+    myReview,
+    personalCharger,
+    publicCharger,
+    splash,
+    splashMiniCar,
+  ];
 }
 
 class $AssetsImagesIconGen {
   const $AssetsImagesIconGen();
+
+  /// File path: assets/images/icon/alarm.png
+  AssetGenImage get alarm =>
+      const AssetGenImage('assets/images/icon/alarm.png');
 
   /// Directory path: assets/images/icon/bank
   $AssetsImagesIconBankGen get bank => const $AssetsImagesIconBankGen();
@@ -56,6 +78,9 @@ class $AssetsImagesIconGen {
   /// File path: assets/images/icon/kakao.png
   AssetGenImage get kakao =>
       const AssetGenImage('assets/images/icon/kakao.png');
+
+  /// File path: assets/images/icon/list.png
+  AssetGenImage get list => const AssetGenImage('assets/images/icon/list.png');
 
   /// File path: assets/images/icon/location.png
   AssetGenImage get location =>
@@ -78,9 +103,11 @@ class $AssetsImagesIconGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    alarm,
     clearInput,
     facebook,
     kakao,
+    list,
     location,
     logo,
     naver,

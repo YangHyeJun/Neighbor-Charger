@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../theme.dart';
 import '../viewmodel/nc_viewmodel.dart';
 
 abstract class NCFormatView<T extends NCViewModel> extends NCView<T> {
@@ -33,6 +34,7 @@ abstract class NCFormatView<T extends NCViewModel> extends NCView<T> {
 abstract class NCView<T extends NCViewModel> extends StatelessWidget {
   late BuildContext context;
   late final T viewModel;
+  late final AppTextTheme theme;
   bool _isCompletedSetup = false;
 
   @override
@@ -48,6 +50,8 @@ abstract class NCView<T extends NCViewModel> extends StatelessWidget {
 
   void _setUp(BuildContext context) {
     viewModel = Provider.of<T>(context);
+    // ✅ Theme.of(context)로 커스텀 텍스트 테마 가져오기
+    theme = AppTextTheme.instance;
     _isCompletedSetup = true;
   }
 }
